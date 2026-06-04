@@ -36,6 +36,11 @@ function Index() {
       <CursorGlow />
       <Navbar />
       <Hero />
+      <MargTrust />
+      <MargComparison />
+      <MargBento />
+      <MargStats />
+      <MargCTA />
       <Features />
       <Stats />
       <Reviews />
