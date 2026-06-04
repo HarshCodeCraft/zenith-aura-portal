@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useRef, useState } from "react";
 import {
   Zap,
   Package,
@@ -63,13 +63,13 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
   const Icon = f.icon;
   return (
     <div className="relative aspect-[4/3] w-full">
-      {/* Aurora glow */}
       <div className="absolute -inset-10 -z-10">
-        <div className={`absolute inset-0 rounded-[3rem] bg-gradient-to-br ${f.accent} opacity-30 blur-3xl transition-all duration-700`} />
+        <div
+          className={`absolute inset-0 rounded-[3rem] bg-gradient-to-br ${f.accent} opacity-30 blur-3xl transition-all duration-700`}
+        />
       </div>
 
-      <div className="relative h-full w-full rounded-3xl glass-strong p-5 shadow-elevated overflow-hidden">
-        {/* Top bar */}
+      <div className="relative h-full w-full overflow-hidden rounded-3xl glass-strong p-5 shadow-elevated">
         <div className="flex items-center gap-2">
           <span className="h-3 w-3 rounded-full bg-accent/80" />
           <span className="h-3 w-3 rounded-full bg-secondary/80" />
@@ -77,7 +77,6 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
           <div className="ml-3 h-6 flex-1 rounded-md bg-white/5" />
         </div>
 
-        {/* Header */}
         <div className="mt-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <motion.div
@@ -101,10 +100,11 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
               </motion.p>
             </div>
           </div>
-          <span className="rounded-full glass px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground">Live</span>
+          <span className="rounded-full glass px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground">
+            Live
+          </span>
         </div>
 
-        {/* Content slot — varies per feature */}
         <div className="mt-6 grid grid-cols-3 gap-3">
           {[0, 1, 2].map((i) => (
             <motion.div
@@ -127,7 +127,6 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
           ))}
         </div>
 
-        {/* Animated chart */}
         <div className="mt-5 h-32 rounded-2xl glass p-3">
           <svg viewBox="0 0 300 100" className="h-full w-full">
             <defs>
@@ -157,7 +156,6 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
           </svg>
         </div>
 
-        {/* Status pill */}
         <motion.div
           key={`status-${activeIndex}`}
           initial={{ opacity: 0, x: -20 }}
@@ -168,7 +166,6 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
           <span className="text-white/90">{f.tag} active</span>
         </motion.div>
 
-        {/* Floating decorative chips */}
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -200,22 +197,21 @@ export function MargTrust() {
     target: ref,
     offset: ["start start", "end end"],
   });
-  // Map scroll progress to active feature index
-  const activeIndexMV = useTransform(scrollYProgress, (v) =>
-    Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length)))
+  const indexMV = useTransform(scrollYProgress, (v) =>
+    Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length))),
   );
-  // Subscribe via React state for re-render
-  const [activeIndex, setActiveIndex] = useStateBound(activeIndexMV);
+  const [activeIndex, setActiveIndex] = useState(0);
+  useMotionValueEvent(indexMV, "change", (v) => setActiveIndex(v));
 
   return (
     <section id="trust" className="relative">
-      {/* Intro */}
       <div className="relative mx-auto max-w-6xl px-4 pt-24 text-center">
         <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
           Trusted globally
         </span>
         <h2 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
-          Why <span className="text-gradient-accent">1,000,000+ Businesses</span><br />
+          Why <span className="text-gradient-accent">1,000,000+ Businesses</span>
+          <br />
           Trust Marg ERP
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
@@ -223,16 +219,13 @@ export function MargTrust() {
         </p>
       </div>
 
-      {/* Sticky storytelling */}
-      <div ref={ref} className="relative" style={{ height: `${features.length * 90}vh` }}>
+      <div ref={ref} className="relative" style={{ height: `${features.length * 85}vh` }}>
         <div className="sticky top-0 flex min-h-screen items-center">
           <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 py-20 lg:grid-cols-2 lg:gap-16">
-            {/* LEFT — sticky dashboard */}
             <div className="relative order-2 lg:order-1">
               <DashboardMockup activeIndex={activeIndex} />
             </div>
 
-            {/* RIGHT — feature list (one active at a time) */}
             <div className="relative order-1 flex items-center lg:order-2">
               <div className="relative w-full">
                 {features.map((f, i) => {
@@ -242,8 +235,8 @@ export function MargTrust() {
                     <motion.div
                       key={f.tag}
                       animate={{
-                        opacity: isActive ? 1 : 0.25,
-                        y: isActive ? 0 : 10,
+                        opacity: isActive ? 1 : 0,
+                        y: isActive ? 0 : 20,
                         scale: isActive ? 1 : 0.97,
                       }}
                       transition={{ duration: 0.5 }}
@@ -251,17 +244,15 @@ export function MargTrust() {
                     >
                       <div className="rounded-3xl glass p-8 md:p-10">
                         <div className="flex items-center gap-3">
-                          <span className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${f.accent} glow-primary`}>
+                          <span
+                            className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${f.accent} glow-primary`}
+                          >
                             <Icon className="h-6 w-6 text-white" />
                           </span>
                           <span className="text-xs uppercase tracking-widest text-secondary">{f.tag}</span>
                         </div>
-                        <h3 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
-                          {f.title}
-                        </h3>
-                        <p className="mt-4 text-base text-muted-foreground md:text-lg">
-                          {f.desc}
-                        </p>
+                        <h3 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">{f.title}</h3>
+                        <p className="mt-4 text-base text-muted-foreground md:text-lg">{f.desc}</p>
                         <div className="mt-8 flex items-center gap-2">
                           {features.map((_, j) => (
                             <span
@@ -281,12 +272,12 @@ export function MargTrust() {
                     </motion.div>
                   );
                 })}
-                {/* spacer to size container */}
-                <div className="invisible rounded-3xl p-8 md:p-10">
+                {/* spacer to reserve height */}
+                <div className="invisible rounded-3xl p-8 md:p-10" aria-hidden>
                   <div className="h-12" />
-                  <h3 className="mt-6 text-3xl font-bold md:text-4xl">Placeholder line one of layout</h3>
+                  <h3 className="mt-6 text-3xl font-bold md:text-4xl">Spacer line one of layout content</h3>
                   <p className="mt-4 text-lg">
-                    Spacer text to reserve height so absolutely positioned cards keep this column tall enough to display all six feature cards correctly.
+                    Reserved height so absolutely positioned feature cards always have enough room to render at any breakpoint width.
                   </p>
                   <div className="mt-8 h-6" />
                 </div>
@@ -297,10 +288,4 @@ export function MargTrust() {
       </div>
     </section>
   );
-
-  // helper hook below — declared via wrapper to keep file self-contained
-  function useStateBound(mv: typeof activeIndexMV) {
-    // Will be replaced — see hook at bottom of file
-    return [0, () => {}] as unknown as [number, (n: number) => void];
-  }
 }
