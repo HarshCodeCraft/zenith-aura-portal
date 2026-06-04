@@ -1,29 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/landing/Navbar";
+import { Hero } from "@/components/landing/Hero";
+import { Features } from "@/components/landing/Features";
+import { Stats } from "@/components/landing/Stats";
+import { Reviews } from "@/components/landing/Reviews";
+import { VideoTestimonials } from "@/components/landing/VideoTestimonials";
+import { WhyUs } from "@/components/landing/WhyUs";
+import { FAQ } from "@/components/landing/FAQ";
+import { CTA } from "@/components/landing/CTA";
+import { Footer } from "@/components/landing/Footer";
+import { CursorGlow } from "@/components/landing/CursorGlow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Nebula — Build products at light speed" },
+      { name: "description", content: "The all-in-one platform that helps modern teams ship faster, collaborate smarter, and scale without limits." },
+      { property: "og:title", content: "Nebula — Build products at light speed" },
+      { property: "og:description", content: "Ship faster. Scale smarter. Loved by 50,000+ teams worldwide." },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      <CursorGlow />
+      <Navbar />
+      <Hero />
+      <Features />
+      <Stats />
+      <Reviews />
+      <VideoTestimonials />
+      <WhyUs />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
   );
 }
