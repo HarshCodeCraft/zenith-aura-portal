@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
+import { MargTrust } from "@/components/landing/MargTrust";
+import { MargComparison } from "@/components/landing/MargComparison";
+import { MargBento } from "@/components/landing/MargBento";
+import { MargStats } from "@/components/landing/MargStats";
+import { MargCTA } from "@/components/landing/MargCTA";
 import { Features } from "@/components/landing/Features";
 import { Stats } from "@/components/landing/Stats";
 import { Reviews } from "@/components/landing/Reviews";
