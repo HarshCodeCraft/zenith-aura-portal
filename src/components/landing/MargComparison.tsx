@@ -12,7 +12,7 @@ const rows = [
 
 export function MargComparison() {
   return (
-    <section id="comparison" className="relative py-32">
+    <section id="comparison" className="relative py-20">
       <div className="absolute inset-0 mesh-bg opacity-30" />
       <div className="relative mx-auto max-w-6xl px-4">
         <motion.div
