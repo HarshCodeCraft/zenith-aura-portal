@@ -41,7 +41,7 @@ function Index() {
       <MargBento />
       <MargStats />
       <MargCTA />
-      <Features />
+      <WhyChooseUs />
       <Stats />
       <Reviews />
       <VideoTestimonials />
