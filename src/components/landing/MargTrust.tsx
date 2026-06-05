@@ -275,9 +275,9 @@ export function MargTrust() {
                 {/* spacer to reserve height */}
                 <div className="invisible rounded-3xl p-8 md:p-10" aria-hidden>
                   <div className="h-12" />
-                  <h3 className="mt-6 text-3xl font-bold md:text-4xl">Spacer line one of layout content</h3>
-                  <p className="mt-4 text-lg">
-                    Reserved height so absolutely positioned feature cards always have enough room to render at any breakpoint width.
+                  <h3 className="mt-6 text-3xl font-bold md:text-4xl">Spacer</h3>
+                  <p className="mt-4 text-base md:text-lg">
+                    Reserved height so absolutely positioned cards render correctly across breakpoints.
                   </p>
                   <div className="mt-8 h-6" />
                 </div>
