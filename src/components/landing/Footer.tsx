@@ -56,7 +56,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">© 2026 Nebula Labs Inc. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 MARGERP Technologies Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-3">
             {[Twitter, Github, Linkedin, Youtube].map((Icon, i) => (
               <a
