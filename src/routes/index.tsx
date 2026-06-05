@@ -6,7 +6,7 @@ import { MargComparison } from "@/components/landing/MargComparison";
 import { MargBento } from "@/components/landing/MargBento";
 import { MargStats } from "@/components/landing/MargStats";
 import { MargCTA } from "@/components/landing/MargCTA";
-import { Features } from "@/components/landing/Features";
+import { WhyChooseUs } from "@/components/landing/WhyChooseUs";
 import { Stats } from "@/components/landing/Stats";
 import { Reviews } from "@/components/landing/Reviews";
 import { VideoTestimonials } from "@/components/landing/VideoTestimonials";
@@ -41,7 +41,7 @@ function Index() {
       <MargBento />
       <MargStats />
       <MargCTA />
-      <Features />
+      <WhyChooseUs />
       <Stats />
       <Reviews />
       <VideoTestimonials />
