@@ -16,10 +16,10 @@ export function Footer() {
               <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary glow-primary">
                 <Sparkles className="h-4 w-4 text-white" />
               </span>
-              <span className="text-gradient-accent">Nebula</span>
+              <span className="text-gradient-accent">MARGERP</span>
             </a>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              The all-in-one platform that helps modern teams ship faster and scale without limits.
+              India's #1 ERP for retailers, distributors, pharmacies and enterprises — automate billing, inventory and growth.
             </p>
             <form className="mt-6 flex max-w-sm gap-2">
               <div className="relative flex-1">
