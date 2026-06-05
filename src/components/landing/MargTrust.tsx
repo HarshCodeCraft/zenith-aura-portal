@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useRef, useState } from "react";
 import {
   Zap,
@@ -197,11 +197,11 @@ export function MargTrust() {
     target: ref,
     offset: ["start start", "end end"],
   });
-  const indexMV = useTransform(scrollYProgress, (v) =>
-    Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length))),
-  );
   const [activeIndex, setActiveIndex] = useState(0);
-  useMotionValueEvent(indexMV, "change", (v) => setActiveIndex(v));
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    const i = Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length)));
+    setActiveIndex(i);
+  });
 
   return (
     <section id="trust" className="relative">
@@ -219,7 +219,7 @@ export function MargTrust() {
         </p>
       </div>
 
-      <div ref={ref} className="relative" style={{ height: `${features.length * 85}vh` }}>
+      <div ref={ref} className="relative" style={{ height: `${features.length * 60}vh` }}>
         <div className="sticky top-0 flex min-h-screen items-center">
           <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 py-20 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
@@ -275,9 +275,9 @@ export function MargTrust() {
                 {/* spacer to reserve height */}
                 <div className="invisible rounded-3xl p-8 md:p-10" aria-hidden>
                   <div className="h-12" />
-                  <h3 className="mt-6 text-3xl font-bold md:text-4xl">Spacer line one of layout content</h3>
-                  <p className="mt-4 text-lg">
-                    Reserved height so absolutely positioned feature cards always have enough room to render at any breakpoint width.
+                  <h3 className="mt-6 text-3xl font-bold md:text-4xl">Spacer</h3>
+                  <p className="mt-4 text-base md:text-lg">
+                    Reserved height so absolutely positioned cards render correctly across breakpoints.
                   </p>
                   <div className="mt-8 h-6" />
                 </div>

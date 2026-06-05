@@ -16,7 +16,7 @@ export function Navbar() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary glow-primary">
             <Sparkles className="h-4 w-4 text-white" />
           </span>
-          <span className="text-gradient-accent">Nebula</span>
+          <span className="text-gradient-accent">MARGERP</span>
         </a>
         <ul className="hidden gap-8 md:flex">
           {links.map((l) => (
