@@ -197,11 +197,11 @@ export function MargTrust() {
     target: ref,
     offset: ["start start", "end end"],
   });
-  const indexMV = useTransform(scrollYProgress, (v) =>
-    Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length))),
-  );
   const [activeIndex, setActiveIndex] = useState(0);
-  useMotionValueEvent(indexMV, "change", (v) => setActiveIndex(v));
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    const i = Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length)));
+    setActiveIndex(i);
+  });
 
   return (
     <section id="trust" className="relative">
