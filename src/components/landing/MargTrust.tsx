@@ -219,7 +219,7 @@ export function MargTrust() {
         </p>
       </div>
 
-      <div ref={ref} className="relative" style={{ height: `${features.length * 85}vh` }}>
+      <div ref={ref} className="relative" style={{ height: `${features.length * 60}vh` }}>
         <div className="sticky top-0 flex min-h-screen items-center">
           <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 py-20 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
