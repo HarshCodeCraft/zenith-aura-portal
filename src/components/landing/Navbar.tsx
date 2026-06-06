@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import margLogo from "@/assets/margqrlogo.png.asset.json";
 
 const links = ["Features", "Reviews", "Stats", "FAQ"];
 
@@ -12,11 +12,11 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 px-4 pt-4"
     >
       <nav className="glass-strong mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3">
-        <a href="#" className="flex items-center gap-2 font-display text-lg font-bold">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary glow-primary">
-            <Sparkles className="h-4 w-4 text-white" />
+        <a href="#" className="flex items-center gap-2 font-display text-base font-bold sm:text-lg">
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 ring-1 ring-white/10 glow-primary">
+            <img src={margLogo.url} alt="Marg Soft Solutions" className="h-6 w-6 object-contain" />
           </span>
-          <span className="text-gradient-accent">MARGERP</span>
+          <span className="text-gradient-accent">MARG SOFT SOLUTIONS</span>
         </a>
         <ul className="hidden gap-8 md:flex">
           {links.map((l) => (
