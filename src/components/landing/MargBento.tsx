@@ -60,7 +60,7 @@ const small = [
 
 export function MargBento() {
   return (
-    <section id="bento" className="relative py-32">
+    <section id="bento" className="relative overflow-hidden py-20">
       <div className="relative mx-auto max-w-7xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

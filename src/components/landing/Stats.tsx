@@ -26,7 +26,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section id="stats" className="relative py-32">
+    <section id="stats" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative overflow-hidden rounded-[2.5rem] glass-strong p-10 md:p-16">
           <div className="absolute -top-32 left-1/2 h-64 w-[80%] -translate-x-1/2 rounded-full bg-primary/30 blur-3xl" />

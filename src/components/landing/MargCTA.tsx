@@ -3,7 +3,7 @@ import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
 
 export function MargCTA() {
   return (
-    <section id="marg-cta" className="relative py-32">
+    <section id="marg-cta" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-5xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

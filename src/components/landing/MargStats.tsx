@@ -35,7 +35,7 @@ const stats = [
 
 export function MargStats() {
   return (
-    <section id="marg-stats" className="relative py-32">
+    <section id="marg-stats" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative overflow-hidden rounded-[2.5rem] glass-strong p-10 md:p-16">
           <div className="absolute -top-32 left-1/4 h-72 w-[60%] -translate-x-1/2 rounded-full bg-primary/30 blur-3xl" />

@@ -46,7 +46,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
 
 export function Features() {
   return (
-    <section id="features" className="relative py-32">
+    <section id="features" className="relative overflow-hidden py-20">
       <div className="absolute inset-0 mesh-bg opacity-40" />
       <div className="relative mx-auto max-w-6xl px-4">
         <motion.div
