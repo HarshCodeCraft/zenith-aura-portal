@@ -1,4 +1,5 @@
-import { Github, Twitter, Linkedin, Youtube, Sparkles, Mail } from "lucide-react";
+import { Github, Twitter, Linkedin, Youtube, Mail } from "lucide-react";
+import margLogo from "@/assets/margqrlogo.png.asset.json";
 
 const cols = [
   { title: "Product", links: ["Features", "Pricing", "Integrations", "Changelog", "Roadmap"] },
@@ -13,10 +14,10 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 font-display text-xl font-bold">
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary glow-primary">
-                <Sparkles className="h-4 w-4 text-white" />
+              <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 ring-1 ring-white/10 glow-primary">
+                <img src={margLogo.url} alt="Marg Soft Solutions" className="h-7 w-7 object-contain" />
               </span>
-              <span className="text-gradient-accent">MARGERP</span>
+              <span className="text-gradient-accent">MARG SOFT SOLUTIONS</span>
             </a>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               India's #1 ERP for retailers, distributors, pharmacies and enterprises — automate billing, inventory and growth.
@@ -56,7 +57,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">© 2026 MARGERP Technologies Pvt Ltd. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 Marg Soft Solutions Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-3">
             {[Twitter, Github, Linkedin, Youtube].map((Icon, i) => (
               <a
