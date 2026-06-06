@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="cta" className="relative py-32">
+    <section id="cta" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-5xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

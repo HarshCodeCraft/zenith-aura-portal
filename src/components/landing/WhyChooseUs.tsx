@@ -354,7 +354,7 @@ const metrics: Metric[] = [
 
 function TrustBlock() {
   return (
-    <div className="relative mt-32">
+    <div className="relative mt-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -417,7 +417,7 @@ function Journey() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div ref={ref} className="relative mt-32">
+    <div ref={ref} className="relative mt-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -479,7 +479,7 @@ function FinalMessage() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="relative mt-32 overflow-hidden rounded-[2.5rem] glass-strong px-6 py-20 text-center md:py-28"
+      className="relative mt-20 overflow-hidden rounded-[2.5rem] glass-strong px-6 py-20 text-center md:py-28"
     >
       <div className="absolute -top-40 left-1/2 h-80 w-[80%] -translate-x-1/2 rounded-full bg-primary/30 blur-[120px]" />
       <div className="absolute -bottom-40 left-1/2 h-80 w-[80%] -translate-x-1/2 rounded-full bg-secondary/25 blur-[120px]" />
@@ -500,7 +500,7 @@ function FinalMessage() {
 
 export function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="relative py-32">
+    <section id="why-choose-us" className="relative overflow-hidden py-20">
       <div className="absolute inset-0 mesh-bg opacity-30" />
       <div className="relative mx-auto max-w-6xl px-4">
         <motion.div

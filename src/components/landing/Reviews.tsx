@@ -19,7 +19,7 @@ export function Reviews() {
   }, []);
 
   return (
-    <section id="reviews" className="relative py-32">
+    <section id="reviews" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-5xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

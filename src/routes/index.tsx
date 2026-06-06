@@ -3,6 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { MargTrust } from "@/components/landing/MargTrust";
 import { MargComparison } from "@/components/landing/MargComparison";
+import { MargEcosystem } from "@/components/landing/MargEcosystem";
 import { MargBento } from "@/components/landing/MargBento";
 import { MargStats } from "@/components/landing/MargStats";
 import { MargCTA } from "@/components/landing/MargCTA";
@@ -37,6 +38,7 @@ function Index() {
       <Navbar />
       <Hero />
       <MargTrust />
+      <MargEcosystem />
       <MargComparison />
       <MargBento />
       <MargStats />

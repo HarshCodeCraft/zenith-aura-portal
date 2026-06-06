@@ -12,7 +12,7 @@ export function VideoTestimonials() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="relative py-32">
+    <section className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

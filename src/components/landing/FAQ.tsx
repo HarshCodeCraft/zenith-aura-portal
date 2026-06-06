@@ -14,7 +14,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative py-32">
+    <section id="faq" className="relative overflow-hidden py-20">
       <div className="mx-auto max-w-3xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
