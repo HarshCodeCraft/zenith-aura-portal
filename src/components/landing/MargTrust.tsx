@@ -219,9 +219,9 @@ export function MargTrust() {
         </p>
       </div>
 
-      <div ref={ref} className="relative" style={{ height: `${features.length * 45 + 60}vh` }}>
-        <div className="sticky top-0 flex h-screen items-center">
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-10 lg:grid-cols-2 lg:gap-16">
+      <div ref={ref} className="relative mt-10" style={{ height: `${features.length * 35 + 30}vh` }}>
+        <div className="sticky top-0 flex min-h-[640px] h-screen items-center">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 py-6 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
               <DashboardMockup activeIndex={activeIndex} />
             </div>
