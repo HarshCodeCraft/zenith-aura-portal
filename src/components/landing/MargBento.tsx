@@ -71,7 +71,7 @@ export function MargBento() {
           <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
             All-in-one
           </span>
-          <h2 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
+          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
             Everything You Need To <br />
             <span className="text-gradient-accent">Run Your Business</span>
           </h2>
