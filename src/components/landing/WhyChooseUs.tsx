@@ -488,7 +488,7 @@ function FinalMessage() {
         transition={{ duration: 4, repeat: Infinity }}
         className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_oklch(1_0_0_/_0.04),_transparent_60%)]"
       />
-      <h3 className="relative mx-auto max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+      <h3 className="relative mx-auto max-w-4xl text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
         We Don't Just Install Software.{" "}
         <span className="text-gradient-accent">We Help Businesses Run Better.</span>
       </h3>
@@ -512,7 +512,7 @@ export function WhyChooseUs() {
           <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
             Why Businesses Choose Us
           </span>
-          <h2 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
+          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
             More Than Software.{" "}
             <span className="text-gradient-accent">A Dedicated Business Growth Partner.</span>
           </h2>
