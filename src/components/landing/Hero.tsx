@@ -10,7 +10,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden pt-32 pb-20 mesh-bg">
+    <section ref={ref} className="relative min-h-screen overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-20 mesh-bg">
       <Particles count={60} />
 
       {/* Floating orbs */}
@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl font-bold leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl"
+          className="text-4xl font-bold leading-[1.05] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
         >
           Build products at <br />
           <span className="text-gradient-accent animate-gradient">light speed</span>
@@ -56,7 +56,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
+          className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl"
         >
           The all-in-one platform that helps modern teams ship faster,
           collaborate smarter, and scale without limits.
@@ -66,11 +66,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex flex-col flex-wrap items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4"
         >
           <a
             href="#cta"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] px-8 py-4 font-semibold text-white shadow-glow-primary transition-all hover:bg-[position:100%_0] hover:scale-105"
+            className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] px-6 py-3.5 text-sm font-semibold text-white shadow-glow-primary transition-all hover:bg-[position:100%_0] hover:scale-105 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
           >
             Start free trial
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -78,7 +78,7 @@ export function Hero() {
           </a>
           <a
             href="#features"
-            className="inline-flex items-center gap-2 rounded-2xl glass-strong px-7 py-4 font-medium text-foreground transition-all hover:scale-105 hover:bg-white/10"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl glass-strong px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:scale-105 hover:bg-white/10 sm:w-auto sm:px-7 sm:py-4 sm:text-base"
           >
             <Play className="h-4 w-4 fill-current" />
             Watch demo

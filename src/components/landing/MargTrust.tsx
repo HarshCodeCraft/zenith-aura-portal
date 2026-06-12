@@ -204,14 +204,14 @@ export function MargTrust() {
   });
 
   return (
-    <section id="trust" className="relative">
-      <div className="relative mx-auto max-w-6xl px-4 pt-24 text-center">
+    <section id="trust" className="relative overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-4 pt-16 text-center sm:pt-24">
         <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
           Trusted globally
         </span>
-        <h2 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
+        <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
           Why <span className="text-gradient-accent">1,000,000+ Businesses</span>
-          <br />
+          <br className="hidden sm:block" />
           Trust Marg ERP
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
@@ -219,8 +219,8 @@ export function MargTrust() {
         </p>
       </div>
 
-      <div ref={ref} className="relative mt-10" style={{ height: `${features.length * 35 + 30}vh` }}>
-        <div className="sticky top-0 flex min-h-[640px] h-screen items-center">
+      <div ref={ref} className="relative mt-8 sm:mt-10" style={{ height: `${features.length * 60 + 40}vh` }}>
+        <div className="sticky top-0 flex min-h-[100svh] items-center py-6">
           <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 py-6 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
               <DashboardMockup activeIndex={activeIndex} />
