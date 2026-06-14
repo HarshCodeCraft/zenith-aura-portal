@@ -21,15 +21,15 @@ const products = [
 ];
 
 export function MargEcosystem() {
-  // Positions for orbiting product cards (desktop)
+  // Pixel offsets from center for orbiting product cards (desktop)
   const positions = [
-    { x: "0%", y: "-46%" },
-    { x: "40%", y: "-30%" },
-    { x: "46%", y: "8%" },
-    { x: "28%", y: "40%" },
-    { x: "-28%", y: "40%" },
-    { x: "-46%", y: "8%" },
-    { x: "-40%", y: "-30%" },
+    { x: 0, y: -260 },
+    { x: 250, y: -150 },
+    { x: 290, y: 30 },
+    { x: 180, y: 200 },
+    { x: -180, y: 200 },
+    { x: -290, y: 30 },
+    { x: -250, y: -150 },
   ];
 
   return (
@@ -87,8 +87,8 @@ export function MargEcosystem() {
             {positions.map((p, i) => {
               const cx = 400;
               const cy = 320;
-              const px = cx + (parseFloat(p.x) / 100) * 800;
-              const py = cy + (parseFloat(p.y) / 100) * 640;
+              const px = cx + (p.x / 600) * 800;
+              const py = cy + (p.y / 600) * 640;
               return (
                 <motion.line
                   key={i}
@@ -145,7 +145,7 @@ export function MargEcosystem() {
                 transition={{ delay: 0.3 + i * 0.08, type: "spring", stiffness: 160 }}
                 className="group absolute left-1/2 top-1/2"
                 style={{
-                  transform: `translate(calc(-50% + ${pos.x}), calc(-50% + ${pos.y}))`,
+                  transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`,
                 }}
               >
                 <div className="relative w-44 cursor-pointer rounded-2xl glass-strong p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated">
