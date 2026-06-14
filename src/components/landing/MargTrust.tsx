@@ -242,17 +242,17 @@ export function MargTrust() {
                       transition={{ duration: 0.5 }}
                       className={`absolute inset-0 ${isActive ? "pointer-events-auto" : "pointer-events-none"}`}
                     >
-                      <div className="rounded-3xl glass p-8 md:p-10">
+                      <div className="rounded-3xl glass p-5 sm:p-8 md:p-10">
                         <div className="flex items-center gap-3">
                           <span
-                            className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${f.accent} glow-primary`}
+                            className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-to-br ${f.accent} glow-primary sm:h-12 sm:w-12`}
                           >
-                            <Icon className="h-6 w-6 text-white" />
+                            <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                           </span>
-                          <span className="text-xs uppercase tracking-widest text-secondary">{f.tag}</span>
+                          <span className="text-[11px] uppercase tracking-widest text-secondary sm:text-xs">{f.tag}</span>
                         </div>
-                        <h3 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">{f.title}</h3>
-                        <p className="mt-4 text-base text-muted-foreground md:text-lg">{f.desc}</p>
+                        <h3 className="mt-4 text-xl font-bold leading-tight sm:mt-6 sm:text-3xl md:text-4xl">{f.title}</h3>
+                        <p className="mt-3 text-sm text-muted-foreground sm:mt-4 sm:text-base md:text-lg">{f.desc}</p>
                         <div className="mt-8 flex items-center gap-2">
                           {features.map((_, j) => (
                             <span
