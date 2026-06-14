@@ -1,5 +1,5 @@
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   Zap,
   Package,
@@ -192,24 +192,29 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
 }
 
 export function MargTrust() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
   const [activeIndex, setActiveIndex] = useState(0);
-  // Map progress to the pinned portion only so the last card is reached
-  // before the sticky stage unpins (prevents trailing blank space).
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const pinFraction = 0.55;
-    const t = Math.min(1, v / pinFraction);
-    const i = Math.min(features.length - 1, Math.max(0, Math.floor(t * features.length)));
-    setActiveIndex(i);
-  });
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % features.length);
+    }, 3500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
-    <section id="trust" className="relative overflow-hidden">
-      <div className="relative mx-auto max-w-6xl px-4 pt-16 text-center sm:pt-24">
+    <section id="trust" className="relative overflow-hidden py-16 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 text-center">
+        <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
+          Trusted globally
+        </span>
+        <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
+          Why <span className="text-gradient-accent">1,000,000+ Businesses</span>
+          <br className="hidden sm:block" />
+          Trust Marg ERP
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+          One unified platform powering retailers, distributors, pharmacies and enterprises across the globe.
+        </p>
+      </div>
         <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
           Trusted globally
         </span>
