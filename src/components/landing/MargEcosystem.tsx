@@ -45,7 +45,7 @@ export function MargEcosystem() {
           <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
             Platform Ecosystem
           </span>
-          <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
             One Platform.{" "}
             <span className="text-gradient-accent">Multiple Business Solutions.</span>
           </h2>

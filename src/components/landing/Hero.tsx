@@ -113,17 +113,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
           style={{ perspective: 1000 }}
-          className="relative mx-auto mt-20 max-w-5xl"
+          className="relative mx-auto mt-12 max-w-5xl sm:mt-20"
         >
           <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary via-secondary to-accent opacity-30 blur-2xl animate-pulse-glow" />
-          <div className="relative glass-strong overflow-hidden rounded-3xl p-2 shadow-elevated">
-            <div className="rounded-2xl bg-gradient-to-br from-[#0F172A] to-[#1e1b4b] p-6">
+          <div className="relative glass-strong overflow-hidden rounded-3xl p-1.5 shadow-elevated sm:p-2">
+            <div className="rounded-2xl bg-gradient-to-br from-[#0F172A] to-[#1e1b4b] p-3 sm:p-6">
               <div className="mb-4 flex items-center gap-2">
                 <span className="h-3 w-3 rounded-full bg-accent" />
                 <span className="h-3 w-3 rounded-full bg-secondary/70" />
                 <span className="h-3 w-3 rounded-full bg-primary" />
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {[
                   { label: "Revenue", value: "$248K", delta: "+24%" },
                   { label: "Active users", value: "18.4K", delta: "+12%" },
@@ -134,15 +134,15 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2 + i * 0.1 }}
-                    className="rounded-xl bg-white/5 p-4 text-left"
+                    className="rounded-xl bg-white/5 p-2.5 text-left sm:p-4"
                   >
-                    <p className="text-xs text-muted-foreground">{s.label}</p>
-                    <p className="mt-1 text-2xl font-bold">{s.value}</p>
-                    <p className="text-xs text-secondary">{s.delta}</p>
+                    <p className="text-[10px] text-muted-foreground sm:text-xs">{s.label}</p>
+                    <p className="mt-1 text-base font-bold sm:text-2xl">{s.value}</p>
+                    <p className="text-[10px] text-secondary sm:text-xs">{s.delta}</p>
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-6 h-48 rounded-xl bg-white/5 p-4">
+              <div className="mt-4 h-32 rounded-xl bg-white/5 p-3 sm:mt-6 sm:h-48 sm:p-4">
                 <svg viewBox="0 0 400 150" className="h-full w-full">
                   <defs>
                     <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">

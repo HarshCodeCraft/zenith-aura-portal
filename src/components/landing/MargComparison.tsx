@@ -76,7 +76,7 @@ export function MargComparison() {
           <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
             The shift
           </span>
-          <h2 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
             Why Businesses Switch From{" "}
             <span className="text-muted-foreground">Traditional ERP</span> To{" "}
             <span className="text-gradient-accent">Marg ERP</span>
@@ -106,7 +106,7 @@ export function MargComparison() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] p-7 md:p-8"
+              className="relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] p-5 sm:p-7 md:p-8"
             >
               <div className="mb-6 flex items-center justify-between">
                 <div>
@@ -134,7 +134,7 @@ export function MargComparison() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
-              className="relative overflow-hidden rounded-3xl glass-strong p-7 md:p-8"
+              className="relative overflow-hidden rounded-3xl glass-strong p-5 sm:p-7 md:p-8"
             >
               <div className="pointer-events-none absolute -top-24 right-0 h-56 w-56 rounded-full bg-secondary/25 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-24 left-0 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
