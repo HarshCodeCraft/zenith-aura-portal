@@ -215,22 +215,10 @@ export function MargTrust() {
           One unified platform powering retailers, distributors, pharmacies and enterprises across the globe.
         </p>
       </div>
-        <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
-          Trusted globally
-        </span>
-        <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
-          Why <span className="text-gradient-accent">1,000,000+ Businesses</span>
-          <br className="hidden sm:block" />
-          Trust Marg ERP
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          One unified platform powering retailers, distributors, pharmacies and enterprises across the globe.
-        </p>
-      </div>
 
-      <div ref={ref} className="relative mt-8 sm:mt-10" style={{ height: `${features.length * 30 + 30}vh` }}>
-        <div className="sticky top-0 flex min-h-[100svh] items-center py-6">
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 py-6 lg:grid-cols-2 lg:gap-16">
+      <div className="relative mt-10 sm:mt-14">
+        <div className="flex items-center py-6">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
               <DashboardMockup activeIndex={activeIndex} />
             </div>
