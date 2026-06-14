@@ -198,8 +198,12 @@ export function MargTrust() {
     offset: ["start start", "end end"],
   });
   const [activeIndex, setActiveIndex] = useState(0);
+  // Map progress to the pinned portion only so the last card is reached
+  // before the sticky stage unpins (prevents trailing blank space).
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const i = Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length)));
+    const pinFraction = 0.55;
+    const t = Math.min(1, v / pinFraction);
+    const i = Math.min(features.length - 1, Math.max(0, Math.floor(t * features.length)));
     setActiveIndex(i);
   });
 
