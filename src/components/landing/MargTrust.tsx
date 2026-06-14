@@ -1,5 +1,5 @@
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   Zap,
   Package,
@@ -192,20 +192,17 @@ function DashboardMockup({ activeIndex }: { activeIndex: number }) {
 }
 
 export function MargTrust() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
   const [activeIndex, setActiveIndex] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const i = Math.min(features.length - 1, Math.max(0, Math.floor(v * features.length)));
-    setActiveIndex(i);
-  });
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % features.length);
+    }, 3500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
-    <section id="trust" className="relative overflow-hidden">
-      <div className="relative mx-auto max-w-6xl px-4 pt-16 text-center sm:pt-24">
+    <section id="trust" className="relative overflow-hidden py-16 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 text-center">
         <span className="rounded-full glass px-4 py-1 text-xs uppercase tracking-widest text-secondary">
           Trusted globally
         </span>
@@ -219,9 +216,9 @@ export function MargTrust() {
         </p>
       </div>
 
-      <div ref={ref} className="relative mt-8 sm:mt-10" style={{ height: `${features.length * 40 + 30}vh` }}>
-        <div className="sticky top-0 flex min-h-[100svh] items-center py-6">
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 py-6 lg:grid-cols-2 lg:gap-16">
+      <div className="relative mt-10 sm:mt-14">
+        <div className="flex items-center py-6">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
               <DashboardMockup activeIndex={activeIndex} />
             </div>
