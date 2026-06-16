@@ -20,10 +20,10 @@ import { CursorGlow } from "@/components/landing/CursorGlow";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nebula — Build products at light speed" },
-      { name: "description", content: "The all-in-one platform that helps modern teams ship faster, collaborate smarter, and scale without limits." },
-      { property: "og:title", content: "Nebula — Build products at light speed" },
-      { property: "og:description", content: "Ship faster. Scale smarter. Loved by 50,000+ teams worldwide." },
+      { title: "Marg Soft Solutions — India's #1 ERP Platform" },
+      { name: "description", content: "Marg Soft Solutions powers retailers, distributors, pharmacies and enterprises with billing, inventory, and growth automation." },
+      { property: "og:title", content: "Marg Soft Solutions — India's #1 ERP Platform" },
+      { property: "og:description", content: "Marg Soft Solutions — automate billing, inventory and growth." },
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "/" }],
