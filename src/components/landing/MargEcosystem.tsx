@@ -109,28 +109,30 @@ export function MargEcosystem() {
           </svg>
 
           {/* Core */}
-          <motion.div
-            initial={{ scale: 0.7, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 160, damping: 18 }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary/40 to-secondary/40 blur-2xl" />
-              <div className="relative grid h-44 w-44 place-items-center rounded-[2rem] glass-strong p-4 text-center shadow-elevated">
-                <div>
-                  <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-primary to-secondary glow-primary">
-                    <Sparkles className="h-6 w-6 text-white" />
-                  </span>
-                  <p className="mt-3 text-xs uppercase tracking-widest text-secondary">
-                    Core Platform
-                  </p>
-                  <p className="text-base font-bold">Marg ERP</p>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <motion.div
+              initial={{ scale: 0.7, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 160, damping: 18 }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary/40 to-secondary/40 blur-2xl" />
+                <div className="relative grid h-44 w-44 place-items-center rounded-[2rem] glass-strong p-4 text-center shadow-elevated">
+                  <div>
+                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-primary to-secondary glow-primary">
+                      <Sparkles className="h-6 w-6 text-white" />
+                    </span>
+                    <p className="mt-3 text-xs uppercase tracking-widest text-secondary">
+                      Core Platform
+                    </p>
+                    <p className="text-base font-bold">Marg ERP</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
 
           {/* Orbiting products */}
           {products.map((p, i) => {
