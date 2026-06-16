@@ -109,62 +109,69 @@ export function MargEcosystem() {
           </svg>
 
           {/* Core */}
-          <motion.div
-            initial={{ scale: 0.7, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 160, damping: 18 }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary/40 to-secondary/40 blur-2xl" />
-              <div className="relative grid h-44 w-44 place-items-center rounded-[2rem] glass-strong p-4 text-center shadow-elevated">
-                <div>
-                  <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-primary to-secondary glow-primary">
-                    <Sparkles className="h-6 w-6 text-white" />
-                  </span>
-                  <p className="mt-3 text-xs uppercase tracking-widest text-secondary">
-                    Core Platform
-                  </p>
-                  <p className="text-base font-bold">Marg ERP</p>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <motion.div
+              initial={{ scale: 0.7, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 160, damping: 18 }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary/40 to-secondary/40 blur-2xl" />
+                <div className="relative grid h-44 w-44 place-items-center rounded-[2rem] glass-strong p-4 text-center shadow-elevated">
+                  <div>
+                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-primary to-secondary glow-primary">
+                      <Sparkles className="h-6 w-6 text-white" />
+                    </span>
+                    <p className="mt-3 text-xs uppercase tracking-widest text-secondary">
+                      Core Platform
+                    </p>
+                    <p className="text-base font-bold">Marg ERP</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
 
           {/* Orbiting products */}
           {products.map((p, i) => {
             const Icon = p.icon;
             const pos = positions[i];
             return (
-              <motion.div
+              <div
                 key={p.name}
-                initial={{ opacity: 0, scale: 0.6 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.08, type: "spring", stiffness: 160 }}
-                className="group absolute left-1/2 top-1/2"
+                className="absolute left-1/2 top-1/2"
                 style={{
                   transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`,
                 }}
               >
-                <div className="relative w-44 cursor-pointer rounded-2xl glass-strong p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated">
-                  <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/40 to-secondary/40 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="relative flex items-center gap-3">
-                    <span
-                      className={`grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br ${p.color} glow-primary`}
-                    >
-                      <Icon className="h-5 w-5 text-white" />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold leading-tight">{p.name}</p>
-                      <p className="text-[11px] text-muted-foreground">{p.desc}</p>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.08, type: "spring", stiffness: 160 }}
+                  className="group"
+                >
+                  <div className="relative w-44 cursor-pointer rounded-2xl glass-strong p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated">
+                    <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/40 to-secondary/40 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="relative flex items-center gap-3">
+                      <span
+                        className={`grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br ${p.color} glow-primary`}
+                      >
+                        <Icon className="h-5 w-5 text-white" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold leading-tight">{p.name}</p>
+                        <p className="text-[11px] text-muted-foreground">{p.desc}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             );
           })}
+
         </div>
 
         {/* Mobile / tablet grid */}
