@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { MargTrust } from "@/components/landing/MargTrust";
@@ -17,21 +16,7 @@ import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
 import { CursorGlow } from "@/components/landing/CursorGlow";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Marg Soft Solutions — India's #1 ERP Platform" },
-      { name: "description", content: "Marg Soft Solutions powers retailers, distributors, pharmacies and enterprises with billing, inventory, and growth automation." },
-      { property: "og:title", content: "Marg Soft Solutions — India's #1 ERP Platform" },
-      { property: "og:description", content: "Marg Soft Solutions — automate billing, inventory and growth." },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Index,
-});
-
-function Index() {
+export default function App() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <CursorGlow />
